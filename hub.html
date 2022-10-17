@@ -2,10 +2,13 @@
 <html>
 <head>
 	<title>Hub</title>
-	<style type="text/css" src="_css/main.css"></style>
+	<link rel="stylesheet" type="text/css" href="_css/main.css">
 	<script type="text/javascript" src="_script/login.js"></script>
 </head>
-<body>
-
+<body onload="generateAccessKey()">
+	<nav id="login-box">	
+			<h1>Login</h1>
+			<input type="text" name="accessKey" id="access-key" oninput="check('access-key')">
+	</nav>
 </body>
 </html>
