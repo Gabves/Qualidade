@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="file" name="file" id="inputFile">
+	<script type="text/javascript">
+		document.getElementById('inputFile').addEventListener("change", function(){
+			var fr = new FileReader();
+			fr.onload = function(){
+				var saveFile = fr.result.split(",");
+				var save = {};
+				saveFile.forEach((elem)=>{
+					save[elem.split(":")[0]] = elem.split(":")[1];
+				});
+				console.log(save);
+			}
+			fr.readAsText(this.files[0]);
+		});
+	</script>
+</body>
+</html>
